@@ -1,6 +1,5 @@
+# 把英文文章中不是单词的东西去掉，返回一个只包含4个字母以上的单词的单词列表
 import re
-import translatetool
-import cutlist
 
 
 def hasNumbers(inputString):  # 判断一个字符串是否含有数字
@@ -9,7 +8,7 @@ def hasNumbers(inputString):  # 判断一个字符串是否含有数字
 
 def changethetext():
     words = []
-    f = open(r'E:\ysresearch\talk资料\Digital Modulation in FadingChannels.txt')
+    f = open(r'E:\ysresearch\要看的新论文\fs_backscatter.txt')
     for eachline in f:
         t = ['/', ';', '.', '\n', ')', '(', '"', ',', '.']  # 创建标点字符表
         for i in t:
@@ -19,6 +18,7 @@ def changethetext():
         for i in eachline:
             if len(i) >= 4 and hasNumbers(i) == False:
                 words.append(i)
+    f.close()
     return words
 
 
